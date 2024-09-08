@@ -1,0 +1,16 @@
+default:
+  image: node:18.17.1
+
+deploy_preview:
+  stage: deploy
+  except:
+    - main
+  script:
+    - npm install 
+
+deploy_production:
+  stage: deploy
+  only:
+    - main
+  script:
+    - npm install
