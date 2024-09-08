@@ -6,11 +6,11 @@ build:
   except:
     - main
   script:
-    - npm install 
+    - npm install --legacy-peer-deps
 
 test:
-  stage: test
+  stage: stage_test
   only:
     - main
   script:
-    - npm install
+    - npm install --legacy-peer-deps
