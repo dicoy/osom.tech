@@ -1,15 +1,15 @@
 default:
   image: node:18.17.1
 
-deploy_preview:
-  stage: deploy
+build:
+  stage: test
   except:
     - main
   script:
     - npm install 
 
-deploy_production:
-  stage: deploy
+test:
+  stage: test
   only:
     - main
   script:
