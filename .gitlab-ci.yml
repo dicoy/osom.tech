@@ -1,4 +1,5 @@
-image: node:18.17.1
+default:
+  image: node:18.17.1
 
 cache:
   paths:
@@ -22,8 +23,10 @@ build_job:
 deploy_job:
   stage: deploy
   script:
-    - npm install -g serve
-    - serve -s build
+    - npm install --global vercel
+    - vercel pull --yes --environment=production --token=$VERCEL_TOKEN
+    - vercel build --prod --token=$VERCEL_TOKEN
+    - vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN
   dependencies:
     - build_job
   only:
