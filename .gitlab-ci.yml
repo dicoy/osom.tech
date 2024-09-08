@@ -1,16 +1,16 @@
 default:
   image: node:18.17.1
 
-build:
-  stage: test
-  except:
-    - main
-  script:
-    - npm install --legacy-peer-deps
+
+stages:
+  - build
+  - test
+  - deploy
+
 
 test:
   stage: build
   only:
     - main
   script:
-    - npm install --legacy-peer-deps
+    - npm install --legacy-peer-deps && npm start
