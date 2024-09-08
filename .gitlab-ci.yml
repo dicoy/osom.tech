@@ -24,5 +24,10 @@ deploy_job:
   script:
     - npm install -g serve
     - serve -s build
+  dependencies:
+    - build_job
   only:
-    - main  # Change this to your branch name if different
+    - main
+  environment:
+    name: staging
+    url: https://staging.neticops.com
