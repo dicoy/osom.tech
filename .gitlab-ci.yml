@@ -9,7 +9,7 @@ build:
     - npm install --legacy-peer-deps
 
 test:
-  stage: stage_test
+  stage: build
   only:
     - main
   script:
