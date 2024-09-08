@@ -30,4 +30,4 @@ deploy_job:
     - main
   environment:
     name: staging
-    url: https://staging.neticops.com
+    url: http://staging.neticops.com
